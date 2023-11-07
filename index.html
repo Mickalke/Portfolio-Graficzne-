@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portoflio Graficzne - Michał Floras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap">
+</head>
+
+<body>
+    <!-- Nagłówek -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="index.html">Strona główna</a>
+                        <a class="navbar-item" href="#portfolio">Portfolio</a>
+                        <a class="navbar-item" href="o_mnie.html">O mnie</a>
+                        <a class="navbar-item" href="kontakt.html">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Główna zawartość -->
+    <main>
+        <!-- Strona główna -->
+        <section class="section" id="strona_glowna">
+            <div class="container main-content">
+                <div class="welcome-text">
+                    <h1 id="portfolio-title" class="zoom-in">Michał Floras Portfolio</h1>
+                </div>
+                <div class="intro-text">
+                    <p class="subtitle">Nazywam się Michał Floras. Jestem studentem Akademii Górniczo-Hutniczej, gdzie studiuję na kierunku Automatyki i Robotyki Przemysłowej. Jestem członkiem koła Naukowego Centrum Mediów w redakcji technicznej, gdzie swój wolny czas poza studiowaniem poświęcam różnego rodzaju działalności, takiej jak realizacja newsów radiowych, nagrania lektorskie, obsługa zespołu muzycznego podczas liveset'u oraz montaż wideo materiałów emitowanych na platformie YouTube na kanale radia a także grafiką komputerowa, tworzenie miniaturek, banerów czy logotypów.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio -->
+        <section class="section" id="portfolio">
+            <div class="container">
+                <h2 class="title section-title">Moje pracę</h2>
+                <div class="gallery interactive-gallery">
+                    <div class="gallery-item">
+                        <img src="erasmus1.png" alt ="logo erasmusa przygotowane w ramach projektu Culture Shadow Erasmus + Project">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="l2.jpg" alt="logo szkolnego radiawęzła RADIO Copernicus">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="l1.png" alt="logo szkolnego projektu dotyczącego walki z depresją">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="logo jach 1.jpeg" alt="logo mojej szkoły Liceum Ogólnokształcące im. Mikołaja Kopernika w Tarnobrzegu ">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="plyta przod wnetrze.png" alt="okładka książki projektu Culture Shadow Erasmus + Project">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sgi1.png" alt="autorskie karty Jenga z wymyślonymi przez siebie zadaniami">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="web.png" alt="projekt albumu na szkole akrylow wzorowanym na ''spotify glass''">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="logo_2.jpg" alt="logo P1B">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="okladka.png" alt="logo P1B">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="plakat_1.png" alt="logo P1B">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="karty1.png" alt="logo P1B">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stopka -->
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>© 2023 Portfolio Graficzne. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </footer>
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <script>
+            var slideIndex = 1;
+            var modal = document.getElementById("myModal");
+            var img = document.getElementsByClassName("gallery-item");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+
+            for (let i = 0; i < img.length; i++) {
+                img[i].onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.firstElementChild.src;
+                    captionText.innerHTML = this.firstElementChild.alt;
+                    showSlides(slideIndex = i + 1);
+                }
+            }
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("gallery-item");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    if (slides[i].firstElementChild.src == modalImg.src) {
+                        slideIndex = i + 1;
+                    }
+                }
+                if (n > slideIndex) { modalImg.src = slides[slideIndex].firstElementChild.src; }
+                if (n < slideIndex) { modalImg.src = slides[slideIndex - 2].firstElementChild.src; }
+            }
+
+            var span = document.getElementsByClassName("close")[0];
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+        </script>
+    </main>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 3,
+            spaceBetween: 30,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+            }
+        });
+    </script>
+    
+</body>
+</html>
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twoje Portfolio Graficzne</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Nagłówek -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="index.html">Strona główna</a>
+                        <a class="navbar-item" href="index.html#portfolio">Portfolio</a>
+                        <a class="navbar-item" href="o_mnie.html">O mnie</a>
+                        <a class="navbar-item" href="kontakt.html">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- O mnie -->
+    <main>
+        <section class="section" id="o_mnie">
+            <div class="container">
+                <h2 class="o mnie">Doświadczenie</h1>
+                <P> <u>Akustyka</u> - Miałem przyjemność pracować w Tarnobrzeskim Domu Kultury w latach 2017-2022 jako drugi akustyk. W głównej mierze wiedza, którą tam nabyłem, opierała się o realizację nagrań audio oraz obsługę sceny podczas różnego rodzaju imprez, wystąpień czy spektakli.</P> <p><u>Grafika Komputerowa</u> - Byłem członkiem zespołu webmasterów przez 3 lata, w którym miałem czynny udział w udoskonalaniu strony internetowej mojego liceum - Liceum Ogólnokształcącego im. Mikołaja Kopernika. Jestem autorem logo szkolnego radia - Radia Copernicus, a także gazetki szkolnej "Lesser". Wykonałem również wiele mniejszych projektów, takich jak na przykład szablony znajdujące się na stronie głównej wymienionej wyżej strony, takie jak "Rekrutacja" oraz "RODO".</p>
+                <h2 class="o mnie">Referencje</h2>
+                <p><a href="https://www.lo.tarnobrzeg.pl/" target="_blank">Liceum Ogólnokształcące im. Mikołaja Kopernika w Tarnobrzeg</a>,
+                <p>Kontakt – Tel./Fax (15) 822 - 16 - 04 e-mail: lo@oswiata.tarnobrzeg.pl</p></p>
+                <p><a href="https://www.lo.tarnobrzeg.pl/" target="_blank">Tarnobrzeski Dom Kultury</a>, <p> Kontakt – tel.: 15 822 21 10 e-mail: sekretariat@tdk.tarnobrzeg.pl</p>
+                <h2 class="o mnie">Umiejętności</h2>
+                <p>Obsługa programów graficznych (Adobe Ilustrator, Adobe Photoshop, Adobe lighroom, Adobe Audition)</p>
+                <p>Obsługa programów do tworzenia i edycji wideo (Adobe Premier Pro, Final Cut Pro)</p>
+                
+                <h2 class="o mnie">Programy w jakich pracuję</h2>
+            </div>
+        </section>
+           <!-- Sekcja programów -->
+        <section class="section" id="programy">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="PS.png" alt="Photoshop">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="il.png" alt="Illustrator">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="audition.png" alt="Illustrator">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="finalcp.png" alt="Illustrator">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="lr.png" alt="Illustrator">
+                    </div>
+                </div>
+                
+                <!-- Dodajemy przyciski nawigacyjne -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>        
+        </section>
+    </main>
+    <!-- Stopka -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>© 2023 Portfolio Graficzne. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    
+    // Inicjalizacja Swiper
+    var swiper = new Swiper('.swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 3, // Ilość widocznych slide'ów na raz
+        spaceBetween: 30, // Odstęp pomiędzy slide'ami
+        breakpoints: { // Odpowiedź na różne rozmiary ekranu
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+            },
+        }
+    });
+
+});
+
+    </script>
+</body>
+</html>
+
